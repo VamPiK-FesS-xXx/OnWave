@@ -1,0 +1,146 @@
+@import "../../../assets/font.scss";
+@import "../../../assets/colors.scss";
+
+.header {
+    font-family: $rb;
+    width: 100%;
+    background-color: $mainColor;
+    padding: 14px 16%;
+    .header-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1280px;
+        padding: 0 16px;
+    }
+    .logo-img {
+        width: 100%;
+        height: 100%;
+    }
+    .list-container {
+        width: 50%;
+        .container-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 7%;
+            padding-right: 7%;
+            .links-item {
+                position: relative;
+                font-size: 1em;
+                display: inline-block;
+                margin-right: 60px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            .links-url {
+                color: $textColor;
+                font-weight: 600;
+                font-size: 16px;
+                transition: all 0.3s;
+                &:hover + .url-underline {
+                    opacity: 1;
+                    transition: all 0.3s;
+                }
+            }
+
+            .active-links-url {
+                font-size: 16px;
+                font-weight: 600;
+                color: $textColor;
+            }
+            .url-underline {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px; /* Толщина подчеркивания */
+                background-color: #fff;
+                border-radius: 15px;
+                opacity: 0;
+                transform: translateY(6px); /* Начальное положение под ссылкой */
+                transition: all 0.3s;
+            }
+            .active-links-url + .active-underline {
+                opacity: 1;
+                transition: all 0.3s;
+            }
+        }
+    }
+
+    .container-input {
+        position: relative;
+        display: inline-block;
+        align-items: center;
+        margin-right: 6.875%;
+        .input-search-btn {
+            position: absolute;
+            width: 15px;
+            height: 16px;
+            background: url(../icon/loop.svg) no-repeat;
+            left: 4.8%;
+            top: 29%;
+        }
+        .input-search {
+            width: 230px;
+            padding-left: 35px;
+            font-weight: 600;
+            font-size: 16px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: $thirdColor;
+            color: #6d6a6a;
+        }
+    }
+
+    .container-main-page {
+        display: flex;
+        margin-right: 10px;
+        align-items: center;
+        .main-page-url {
+            display: block;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: $thirdColor;
+            margin-right: 10px;
+        }
+        .dropdown-btn {
+            padding: 6px;
+            border: solid $textColor;
+            background: transparent;
+            border-width: 0 2.5px 2.6px 0;
+            margin: 3px;
+            display: inline-block;
+            transform: rotate(45deg);
+        }
+        .active-dropdown-content {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            width: 178px;
+            background-color: $mainColor;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 10px 10px 3px rgba(34, 60, 80, 0.3);
+            transform: translateY(10px);
+
+            li {
+                &:first-child {
+                    padding-top: 0;
+                }
+                padding-top: 10px;
+            }
+            a {
+                color: $textColor;
+
+                font-weight: 600;
+            }
+        }
+        .dropdown-content {
+            display: none;
+        }
+    }
+}
