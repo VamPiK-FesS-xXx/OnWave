@@ -1,56 +1,15 @@
-import { useState } from 'react'
-
-import { links } from '../../data/data-links'
-import { dropDownLinks } from '../../data/data-dropdown-links'
+import { useState, useRef } from 'react'
+import { useClickOutside } from '../../scripts/useClickOutside'
+import RenderNavLinks from './navLinksTemplate'
+import RenderDropDownLinks from './navDropdownLinks'
 import './styles/header.css'
 export default function Header() {
-	const [activeIndex, setActiveIndex] = useState(0)
 	const [isOpen, setOpen] = useState(false)
-	function TemplateNavLinks(props) {
-		return (
-			<li className='links-item'>
-				<a
-					href={props.link.path}
-					className={props.isActive ? 'active-links-url' : 'links-url'}
-					onClick={e => {
-						e.preventDefault()
-						props.onActivate()
-					}}
-				>
-					{props.link.url}
-				</a>
-				<span
-					className={`url-underline ${
-						props.isActive ? 'active-underline' : ''
-					}`}
-				></span>
-			</li>
-		)
-	}
-	function RenderNavLinks() {
-		return links.map((link, index) => (
-			<TemplateNavLinks
-				key={index}
-				link={link}
-				isActive={activeIndex === index}
-				onActivate={() => setActiveIndex(index)}
-			/>
-		))
-	}
-	function TemplateDropdownLinks(props) {
-		return (
-			<li className='links-dropdown-item'>
-				<a href={props.link.dropdownPath} className='dropdown-link'>
-					{props.link.dropdownUrl}
-				</a>
-			</li>
-		)
-	}
-	function RenderDropDownLinks() {
-		return dropDownLinks.map((link, index) => (
-			<TemplateDropdownLinks key={index} link={link} />
-		))
-	}
+	const menuRef = useRef(null)
+	useClickOutside(menuRef, () => {
+		if (isOpen) setTimeout(() => setOpen(false), 50)
+	})
+
 	return (
 		<>
 			<header className='header'>
@@ -77,7 +36,7 @@ export default function Header() {
 						<a href='' className='main-page-url'>
 							<img src='' alt='' className='main-url-avatar' />
 						</a>
-						<div className='container-dropdown'>
+						<div className='container-dropdown' ref={menuRef}>
 							<button
 								className='dropdown-btn'
 								onClick={() => setOpen(!isOpen)}
