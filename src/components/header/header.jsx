@@ -9,6 +9,7 @@ const CLIENT_SECRET = 'Dr8MOQh42CMKtL3xgUM8uORnkaIXxFTJ'
 export default function Header() {
 	const [accessToken, setAccessToken] = useState('')
 	const [isOpen, setOpen] = useState(false)
+	const [searchInput, setSearchInput] = useState('')
 	const menuRef = useRef(null)
 	useClickOutside(menuRef, () => {
 		if (isOpen) setTimeout(() => setOpen(false), 50)
@@ -30,8 +31,47 @@ export default function Header() {
 		}
 		fetch('https://api.soundcloud.com/oauth2/token', authParam)
 			.then(result => result.json())
-			.then(data => console.log(data))
+			.then(data => setAccessToken(data.access_token))
 	}, [])
+
+	async function searchAndDisplayUser() {
+		console.log('вы искали пользователя ' + searchInput)
+
+		const searchParams = {
+			method: 'GET',
+			headers: {
+				Accept: 'application/json; charset=utf-8',
+				Authorization: 'Bearer ' + accessToken,
+			},
+		}
+		try {
+			const response = await fetch(
+				'https://api.soundcloud.com/users?q=' + searchInput,
+				searchParams
+			)
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`)
+			}
+			const users = await response.json()
+			const firstUser = users[0]
+			if (firstUser) {
+				console.log('найден пользователь' + firstUser)
+				console.log(`
+					ID: ${firstUser.id}
+					`)
+			}
+			return firstUser
+		} catch {
+			console.error('Ошибка при поиске пользователя:')
+			return null
+		}
+	}
+	searchAndDisplayUser().then(user => {
+		if (user) {
+			// Дополнительные действия с найденным пользователем
+			console.log('Пользователь получен:', user.username)
+		}
+	})
 	return (
 		<>
 			<header className='header'>
@@ -47,8 +87,21 @@ export default function Header() {
 						</ul>
 					</nav>
 					<div className='container-input'>
-						<input type='text' className='input-search' placeholder='Поиск' />
-						<button className='input-search-btn'></button>
+						<input
+							type='text'
+							className='input-search'
+							placeholder='Поиск'
+							onKeyPress={event => {
+								if (event.key === 'Enter') {
+									searchAndDisplayUser()
+								}
+							}}
+							onChange={event => setSearchInput(event.target.value)}
+						/>
+						<button
+							className='input-search-btn'
+							onClick={searchAndDisplayUser}
+						></button>
 					</div>
 					<div className='container-main-page'>
 						<a href='' className='main-page-url'>

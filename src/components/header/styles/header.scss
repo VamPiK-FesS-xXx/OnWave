@@ -125,6 +125,9 @@
             border-radius: 10px;
             padding: 10px;
             box-shadow: 0px 10px 10px 3px rgba(34, 60, 80, 0.3);
+            transition: all 0.3s;
+            opacity: 1;
+            overflow: visible;
             transform: translateY(10px);
 
             li {
@@ -141,6 +144,9 @@
         }
         .dropdown-content {
             display: none;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s;
         }
     }
 }
