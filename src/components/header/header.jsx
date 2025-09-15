@@ -33,10 +33,8 @@ export default function Header() {
 			.then(result => result.json())
 			.then(data => setAccessToken(data.access_token))
 	}, [])
-
 	async function searchAndDisplayUser() {
 		console.log('вы искали пользователя ' + searchInput)
-
 		const searchParams = {
 			method: 'GET',
 			headers: {
@@ -49,9 +47,6 @@ export default function Header() {
 				'https://api.soundcloud.com/users?q=' + searchInput,
 				searchParams
 			)
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`)
-			}
 			const users = await response.json()
 			const firstUser = users[0]
 			if (firstUser) {
@@ -62,16 +57,10 @@ export default function Header() {
 			}
 			return firstUser
 		} catch {
-			console.error('Ошибка при поиске пользователя:')
 			return null
 		}
 	}
-	searchAndDisplayUser().then(user => {
-		if (user) {
-			// Дополнительные действия с найденным пользователем
-			console.log('Пользователь получен:', user.username)
-		}
-	})
+
 	return (
 		<>
 			<header className='header'>
@@ -102,6 +91,37 @@ export default function Header() {
 							className='input-search-btn'
 							onClick={searchAndDisplayUser}
 						></button>
+						<div className='container-search-users-tracks'>
+							<div className='container-search-results'>
+								<div className='results-container'>
+									<div className='continer-user-avatar'>
+										<img src={logo} alt='' className='user-avatar' />
+										<p className='username-track-name'>Lorem, ipsum.</p>
+									</div>
+									<div className='container-ico'>
+										<img src={logo} alt='' className='ico-result' />
+									</div>
+								</div>
+								<div className='results-container'>
+									<div className='continer-user-avatar'>
+										<img src={logo} alt='' className='user-avatar' />
+										<p className='username-track-name'>Lorem, ipsum.</p>
+									</div>
+									<div className='container-ico'>
+										<img src={logo} alt='' className='ico-result' />
+									</div>
+								</div>
+								<div className='results-container'>
+									<div className='continer-user-avatar'>
+										<img src={logo} alt='' className='user-avatar' />
+										<p className='username-track-name'>Lorem, ipsum.</p>
+									</div>
+									<div className='container-ico'>
+										<img src={logo} alt='' className='ico-result' />
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div className='container-main-page'>
 						<a href='' className='main-page-url'>

@@ -92,6 +92,47 @@
   background-color: #301934;
   color: #6d6a6a;
 }
+.header .container-input .container-search-users-tracks {
+  position: relative;
+}
+.header .container-input .container-search-users-tracks .container-search-results {
+  position: absolute;
+  transform: translateY(2px);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background-color: #301934;
+  border-radius: 5px;
+}
+.header .container-input .container-search-users-tracks .continer-user-avatar {
+  display: flex;
+  align-items: center;
+}
+.header .container-input .container-search-users-tracks .continer-user-avatar .username-track-name {
+  color: #ffffff;
+  font-weight: 600;
+  padding-left: 15px;
+}
+.header .container-input .container-search-users-tracks .continer-user-avatar .user-avatar {
+  height: 26px;
+  width: 26px;
+}
+.header .container-input .container-search-users-tracks .results-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+}
+.header .container-input .container-search-users-tracks .results-container:hover {
+  background-color: #7158bd;
+  cursor: pointer;
+}
+.header .container-input .container-search-users-tracks .ico-result {
+  width: 16px;
+  height: 16px;
+}
 .header .container-main-page {
   display: flex;
   margin-right: 10px;

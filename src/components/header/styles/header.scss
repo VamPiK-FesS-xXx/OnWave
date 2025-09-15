@@ -93,6 +93,48 @@
             background-color: $thirdColor;
             color: #6d6a6a;
         }
+        .container-search-users-tracks {
+            position: relative;
+            .container-search-results {
+                position: absolute;
+                transform: translateY(2px);
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                background-color: $thirdColor;
+                border-radius: 5px;
+            }
+            .continer-user-avatar {
+                display: flex;
+                align-items: center;
+                .username-track-name {
+                    color: $textColor;
+                    font-weight: 600;
+                    padding-left: 15px;
+                }
+                .user-avatar {
+                    height: 26px;
+                    width: 26px;
+                }
+            }
+            .results-container {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 12px;
+                &:hover {
+                    background-color: $mainColor;
+                    cursor: pointer;
+                }
+            }
+
+            .ico-result {
+                width: 16px;
+                height: 16px;
+            }
+        }
     }
 
     .container-main-page {
