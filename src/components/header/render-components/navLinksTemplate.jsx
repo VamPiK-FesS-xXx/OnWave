@@ -1,4 +1,4 @@
-import { links } from '../../data/data-links'
+import { links } from '../data/data-links'
 import { useState } from 'react'
 
 function TemplateNavLinks(props) {

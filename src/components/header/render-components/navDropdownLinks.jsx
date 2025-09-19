@@ -1,4 +1,4 @@
-import { dropDownLinks } from '../../data/data-dropdown-links'
+import { dropDownLinks } from '../data/data-dropdown-links'
 function TemplateDropdownLinks(props) {
 	return (
 		<li className='links-dropdown-item'>
