@@ -1,8 +1,12 @@
-import Header from './components/header/header'
+import { Route, Routes } from 'react-router-dom'
+import Header from './components/header/headerLayout'
 function App() {
+
 	return (
 		<>
-			<Header />
+			<Routes>
+				<Route path='' element={<Header  />} />
+			</Routes>
 		</>
 	)
 }
