@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+.browse {
+  background-color: #7158bd;
+  width: 100%;
+  height: 100vh;
+  font-family: Roboto;
+  padding: 0px 16%;
+  padding-top: 50px;
+}
+.browse .browse-container {
+  overflow: hidden;
+  width: 868px;
+  padding-left: 16px;
+  margin-right: 39px;
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+}
+.browse .browse-container .container-content .playlist-title {
+  font-weight: 600;
+  color: #ffffff;
+  padding-bottom: 16px;
+}
+.browse .browse-container .container-content .content-playlist {
+  display: flex;
+}
+.browse .browse-container .content-container-playlist {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 159px;
+  margin-right: 32px;
+}
+.browse .browse-container .content-container-playlist:hover .playlist-play {
+  display: block;
+}
+.browse .browse-container .content-container-playlist.playlist-play {
+  align-items: center;
+}
+.browse .browse-container .content-container-playlist .playlist-img {
+  width: 159px;
+  height: 159px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+.browse .browse-container .content-container-playlist .playlist-text,
+.browse .browse-container .content-container-playlist .playlist-subtext {
+  padding-top: 8px;
+  font-weight: 600;
+}
+.browse .browse-container .content-container-playlist .playlist-text {
+  color: #ffffff;
+}
+.browse .browse-container .content-container-playlist .playlist-subtext {
+  color: #b16dc2;
+}
+.browse .browse-container .content-container-playlist .playlist-play {
+  position: absolute;
+  top: 21%;
+  left: 30%;
+  display: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: url(../icons/play.svg) no-repeat 62% 52%;
+  background-color: #a384eb;
+}/*# sourceMappingURL=browse.css.map */
