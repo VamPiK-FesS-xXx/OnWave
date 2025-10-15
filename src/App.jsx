@@ -4,7 +4,7 @@ import BrowserMainPageLayout from './components/browser-main-page/browserTrackLa
 function App() {
 	return (
 		<>
-			{/* <Header /> */}
+			<Header />
 			<Routes>
 				<Route path='' element={<BrowserMainPageLayout />} />
 			</Routes>

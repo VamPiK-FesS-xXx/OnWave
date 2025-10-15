@@ -1,0 +1,170 @@
+@import "../../../../../assets/colors.scss";
+@import "../../../../../assets/font.scss";
+
+.aside-menu {
+    width: 100%;
+    .menu-container {
+        max-width: 360px;
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        gap: 36px;
+        .menu-title {
+            color: $textColor;
+            font-weight: 600;
+        }
+        .container-content-menu {
+            .menu-content {
+                display: flex;
+                padding-top: 20px;
+                &.should-follow-content {
+                    flex-direction: column;
+                }
+                &.likes-content {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .menu-link-artist {
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 50%;
+                    background-color: $textColor;
+                    display: flex;
+                    margin-right: 15px;
+                    &.should-follow {
+                        width: 48px;
+                        height: 48px;
+                    }
+                }
+                .content-title {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .title-likes,
+                    .subtitle-likes {
+                        font-family: $int;
+                        font-weight: 600;
+                        color: $textColor;
+                    }
+                    .subtitle-likes {
+                        color: #a39f9f;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .content-artist {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding-top: 10px;
+                    &:first-child {
+                        padding-top: 0;
+                    }
+
+                    .artist-info {
+                        display: flex;
+                        align-items: center;
+
+                        .info-artist-name {
+                            color: $textColor;
+                            font-weight: 700;
+                            font-family: $int;
+                        }
+                        .info-statistics {
+                            display: flex;
+                            flex-direction: column;
+                            .container-statistics {
+                                display: flex;
+                                flex-direction: row;
+                                padding-top: 8px;
+                                align-items: center;
+                                .statisctic-text {
+                                    color: $secondColor;
+                                    font-weight: 800;
+                                    padding-right: 8px;
+                                    font-family: $int;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //likes
+            .container-list-like {
+                width: 100%;
+                padding-top: 16px;
+                .like-list {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    padding: 8px 0;
+                    .list-like-item {
+                        width: 100%;
+                        display: flex;
+                        .item-cover {
+                            width: 48px;
+                            height: 48px;
+                            display: block;
+                            margin-right: 15px;
+                            background-color: $textColor;
+                        }
+                    }
+                    .item-info {
+                        .info-item-container {
+                            .container-track-info {
+                                display: flex;
+                                flex-direction: column;
+                                .info-name-artist-item-url,
+                                .info-titile-track-item-url {
+                                    font-family: $int;
+                                    font-weight: 600;
+                                    line-height: 1.3em;
+                                }
+                                .info-name-artist-item-url {
+                                    color: $textColor;
+                                }
+                                .info-titile-track-item-url {
+                                    color: $secondColor;
+                                }
+                            }
+                        }
+                        .list-staticts {
+                            display: flex;
+                            justify-content: space-between;
+                            line-height: 1.8em;
+                            .staticts-item {
+                                position: relative;
+                                margin-right: 8px;
+                                display: inline-flex;
+                                &:last-child {
+                                    margin-right: 0;
+                                }
+                                .item-ico {
+                                    display: inline-flex;
+                                    align-items: center;
+                                    margin-right: 8px;
+                                }
+                            }
+                            .item-num-of-static {
+                                color: $secondColor;
+                                font-weight: 600;
+                                font-family: $int;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //statisctic icons
+            .container-statistics {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}

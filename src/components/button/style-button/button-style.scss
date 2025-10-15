@@ -1,0 +1,17 @@
+@import "../../../assets/colors.scss";
+@import "../../../assets/font.scss";
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: $textColor;
+    color: black;
+    font-family: $int;
+    transition: all 0.4s;
+    &:hover {
+        background-color: $thirdColor;
+        color: $textColor;
+        transition: all 0.4s;
+    }
+}

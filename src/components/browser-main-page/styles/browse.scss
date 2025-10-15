@@ -7,6 +7,9 @@
     font-family: $rb;
     padding: 0px 16%;
     padding-top: 50px;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(2, 2fr);
     .browse-container {
         overflow: hidden;
         width: 868px;
