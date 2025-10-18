@@ -90,6 +90,9 @@
   padding-right: 8px;
   font-family: Inter;
 }
+.aside-menu .menu-container .container-content-menu .menu-content .content-artist .artist-info .info-statistics .container-statistics .statistic-ico {
+  margin-right: 3px;
+}
 .aside-menu .menu-container .container-content-menu .container-list-like {
   width: 100%;
   padding-top: 16px;
@@ -149,8 +152,4 @@
   color: #b16dc2;
   font-weight: 600;
   font-family: Inter;
-}
-.aside-menu .menu-container .container-content-menu .container-statistics {
-  display: flex;
-  align-items: center;
 }/*# sourceMappingURL=aside-styles.css.map */
