@@ -1,0 +1,170 @@
+@import "../../../assets/colors.scss";
+@import "../../../assets/font.scss";
+
+.player {
+    width: 100%;
+    background-color: #303030;
+    position: fixed;
+    bottom: 0;
+
+    padding: 8px 16px;
+    .player-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .player-controls-elements {
+            padding: 0 16px;
+            max-width: 1280px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            .elemtns-btn {
+                display: flex;
+                align-items: center;
+                .control-btn-element {
+                    background: transparent;
+                    margin-right: 8px;
+                    .pause-play {
+                        background-color: $textColor;
+                        border-radius: 50%;
+                        width: 32px;
+                        height: 32px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+                .shuffle-element {
+                    margin-left: 36px;
+                    margin-right: 20px;
+                }
+            }
+        }
+        .container-track-time {
+            display: flex;
+            align-items: center;
+            margin-left: 24px;
+            width: 55%;
+            position: relative;
+            .time-track-start {
+                font-family: $rb;
+                font-weight: 600;
+                color: $textColor;
+            }
+            .control-btn-element {
+                background: transparent;
+                margin-left: 10px;
+            }
+            .start {
+                margin-right: 8px;
+            }
+            .track-lenght[type="range"] {
+                -webkit-appearance: none;
+                border-radius: 5px;
+                accent-color: $textColor;
+                height: 3px;
+                width: 100%;
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    height: 15px;
+                    width: 15px;
+                    border-radius: 50%;
+                    background-color: $mainColor;
+                    box-shadow: 0 0 2px 0 #555;
+                }
+            }
+            .end {
+                margin-left: 8px;
+            }
+            .volume-contaier {
+                display: inline-flex;
+                position: relative;
+                flex-direction: column;
+                align-items: center;
+                width: 5%;
+            }
+            .volume:hover + .volume-popup {
+                overflow: visible;
+                opacity: 1;
+                transition: all 0.3s;
+            }
+
+            .volume-popup {
+                width: 100%;
+                position: relative;
+                display: flex;
+                opacity: 1;
+                overflow: hidden;
+                height: 0;
+                transition: all 0.3s;
+                .popup-controler {
+                    transform: translateY(-185px);
+                    display: inline-flex;
+                    position: absolute;
+                    .contoroler {
+                        background: url(../player-icons/volume-bg.svg) no-repeat;
+                        height: 152px;
+                        display: inline-flex;
+                        width: 48px;
+                        .controler-track-volume {
+                            height: 100%;
+                            transform: rotate(-90deg) !important;
+                            position: absolute;
+                            left: -85%;
+                        }
+                    }
+                }
+            }
+        }
+        .artist-track-info-elements {
+            margin-left: 30px;
+            display: flex;
+            align-items: center;
+            .cover-element {
+                margin-right: 20px;
+            }
+            .track-cover {
+                width: 32px;
+                height: 32px;
+                background-color: $textColor;
+                display: block;
+            }
+            .info-elements {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                line-height: 1.3em;
+                .name-url-item {
+                    font-family: $rb;
+                    font-weight: 600;
+                    color: $secondColor;
+                    &.track-url {
+                        color: #b6b3b7;
+                    }
+                }
+            }
+
+            .user-elements {
+                margin-left: 25px;
+                .control-btn-element {
+                    background: transparent;
+                    margin-right: 30px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+                .like-follow-elements {
+                }
+                .ico-element {
+                }
+                .like {
+                }
+                .like-ico {
+                }
+                .follow {
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+.player {
+  width: 100%;
+  background-color: #303030;
+  position: fixed;
+  bottom: 0;
+  padding: 8px 16px;
+}
+.player .player-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player .player-container .player-controls-elements {
+  padding: 0 16px;
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.player .player-container .player-controls-elements .elemtns-btn {
+  display: flex;
+  align-items: center;
+}
+.player .player-container .player-controls-elements .elemtns-btn .control-btn-element {
+  background: transparent;
+  margin-right: 8px;
+}
+.player .player-container .player-controls-elements .elemtns-btn .control-btn-element .pause-play {
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player .player-container .player-controls-elements .elemtns-btn .shuffle-element {
+  margin-left: 36px;
+  margin-right: 20px;
+}
+.player .player-container .container-track-time {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+  width: 55%;
+  position: relative;
+}
+.player .player-container .container-track-time .time-track-start {
+  font-family: Roboto;
+  font-weight: 600;
+  color: #ffffff;
+}
+.player .player-container .container-track-time .control-btn-element {
+  background: transparent;
+  margin-left: 10px;
+}
+.player .player-container .container-track-time .start {
+  margin-right: 8px;
+}
+.player .player-container .container-track-time .track-lenght[type=range] {
+  -webkit-appearance: none;
+  border-radius: 5px;
+  accent-color: #ffffff;
+  height: 3px;
+  width: 100%;
+}
+.player .player-container .container-track-time .track-lenght[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #7158bd;
+  box-shadow: 0 0 2px 0 #555;
+}
+.player .player-container .container-track-time .end {
+  margin-left: 8px;
+}
+.player .player-container .container-track-time .volume-contaier {
+  display: inline-flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 5%;
+}
+.player .player-container .container-track-time .volume:hover + .volume-popup {
+  overflow: visible;
+  opacity: 1;
+  transition: all 0.3s;
+}
+.player .player-container .container-track-time .volume-popup {
+  width: 100%;
+  position: relative;
+  display: flex;
+  opacity: 1;
+  overflow: hidden;
+  height: 0;
+  transition: all 0.3s;
+}
+.player .player-container .container-track-time .volume-popup .popup-controler {
+  transform: translateY(-185px);
+  display: inline-flex;
+  position: absolute;
+}
+.player .player-container .container-track-time .volume-popup .popup-controler .contoroler {
+  background: url(../player-icons/volume-bg.svg) no-repeat;
+  height: 152px;
+  display: inline-flex;
+  width: 48px;
+}
+.player .player-container .container-track-time .volume-popup .popup-controler .contoroler .controler-track-volume {
+  height: 100%;
+  transform: rotate(-90deg) !important;
+  position: absolute;
+  left: -85%;
+}
+.player .player-container .artist-track-info-elements {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+.player .player-container .artist-track-info-elements .cover-element {
+  margin-right: 20px;
+}
+.player .player-container .artist-track-info-elements .track-cover {
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff;
+  display: block;
+}
+.player .player-container .artist-track-info-elements .info-elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.3em;
+}
+.player .player-container .artist-track-info-elements .info-elements .name-url-item {
+  font-family: Roboto;
+  font-weight: 600;
+  color: #b16dc2;
+}
+.player .player-container .artist-track-info-elements .info-elements .name-url-item.track-url {
+  color: #b6b3b7;
+}
+.player .player-container .artist-track-info-elements .user-elements {
+  margin-left: 25px;
+}
+.player .player-container .artist-track-info-elements .user-elements .control-btn-element {
+  background: transparent;
+  margin-right: 30px;
+}
+.player .player-container .artist-track-info-elements .user-elements .control-btn-element:last-child {
+  margin-right: 0;
+}/*# sourceMappingURL=player-styles.css.map */
