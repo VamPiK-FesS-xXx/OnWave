@@ -69,11 +69,15 @@
 }
 .player .player-container .container-track-time .track-lenght[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
+  display: none;
   height: 15px;
   width: 15px;
   border-radius: 50%;
   background-color: #7158bd;
   box-shadow: 0 0 2px 0 #555;
+}
+.player .player-container .container-track-time .track-lenght[type=range]:hover::-webkit-slider-thumb {
+  display: block;
 }
 .player .player-container .container-track-time .end {
   margin-left: 8px;
@@ -85,32 +89,28 @@
   align-items: center;
   width: 5%;
 }
-.player .player-container .container-track-time .volume:hover + .volume-popup {
-  overflow: visible;
-  opacity: 1;
-  transition: all 0.3s;
-}
 .player .player-container .container-track-time .volume-popup {
+  display: none;
+}
+.player .player-container .container-track-time .active-volume-popup {
   width: 100%;
   position: relative;
   display: flex;
   opacity: 1;
-  overflow: hidden;
-  height: 0;
   transition: all 0.3s;
 }
-.player .player-container .container-track-time .volume-popup .popup-controler {
+.player .player-container .container-track-time .active-volume-popup .popup-controler {
   transform: translateY(-185px);
   display: inline-flex;
   position: absolute;
 }
-.player .player-container .container-track-time .volume-popup .popup-controler .contoroler {
+.player .player-container .container-track-time .active-volume-popup .popup-controler .contoroler {
   background: url(../player-icons/volume-bg.svg) no-repeat;
   height: 152px;
   display: inline-flex;
   width: 48px;
 }
-.player .player-container .container-track-time .volume-popup .popup-controler .contoroler .controler-track-volume {
+.player .player-container .container-track-time .active-volume-popup .popup-controler .contoroler .controler-track-volume[type=range] {
   height: 100%;
   transform: rotate(-90deg) !important;
   position: absolute;
@@ -140,9 +140,14 @@
   font-family: Roboto;
   font-weight: 600;
   color: #b16dc2;
+  transition: all 0.3s;
 }
 .player .player-container .artist-track-info-elements .info-elements .name-url-item.track-url {
   color: #b6b3b7;
+}
+.player .player-container .artist-track-info-elements .info-elements .name-url-item:hover {
+  color: #e2e0e2;
+  transition: all 0.3s;
 }
 .player .player-container .artist-track-info-elements .user-elements {
   margin-left: 25px;
