@@ -17,6 +17,9 @@ export default function Player() {
   const toggleController = () => {
     setControllerActive(!isControllerActive);
   };
+
+
+  
   return (
     <section className="player">
       <div className="player-container">

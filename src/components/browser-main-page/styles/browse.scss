@@ -16,16 +16,18 @@
         padding-left: 16px;
         margin-right: 39px;
         display: flex;
-        gap: 60px;
+        gap: 30px;
         flex-direction: column;
         .container-content {
             .playlist-title {
                 font-weight: 600;
                 color: $textColor;
                 padding-bottom: 16px;
+                font-size: 1.6em;
             }
             .content-playlist {
                 display: flex;
+                padding-top: 8px;
             }
         }
 
@@ -41,28 +43,34 @@
             &.playlist-play {
                 align-items: center;
             }
-
+            .cover-playlist {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                object-fit: fill;
+            }
             .playlist-img {
                 width: 159px;
                 height: 159px;
                 border-radius: 15px;
                 background-color: $textColor;
+                margin-bottom: 8px;
             }
             .playlist-text,
             .playlist-subtext {
-                padding-top: 8px;
+                // padding-top: 8px;
                 font-weight: 600;
             }
             .playlist-text {
                 color: $textColor;
+                line-height: 1.3em;
             }
             .playlist-subtext {
                 color: $secondColor;
+                line-height: 1.6em;
             }
             .playlist-play {
                 position: absolute;
-                top: 21%;
-                left: 30%;
                 display: none;
                 width: 64px;
                 height: 64px;
